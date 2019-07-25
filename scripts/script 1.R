@@ -49,3 +49,10 @@ respondent_wall_type[c(3,2)]
 
 
 more_respondent_wall_type <- respondent_wall_type[c(1,2,3,2,1,3)]
+
+no_numbers[c(TRUE,FALSE,TRUE,TRUE)]
+no_numbers[no_numbers > 5]
+
+
+
+
