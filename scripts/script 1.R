@@ -53,6 +53,9 @@ more_respondent_wall_type <- respondent_wall_type[c(1,2,3,2,1,3)]
 no_numbers[c(TRUE,FALSE,TRUE,TRUE)]
 no_numbers[no_numbers > 5]
 
+no_numbers[no_numbers <3 | no_numbers>5]
+no_numbers[no_numbers >=7 & no_numbers == 3]
 
-
+possessions[possessions=="car"|possessions=="bicycle"]
+possessions[possessions %in% c("car","bicycle")]
 
