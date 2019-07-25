@@ -58,4 +58,9 @@ no_numbers[no_numbers >=7 & no_numbers == 3]
 
 possessions[possessions=="car"|possessions=="bicycle"]
 possessions[possessions %in% c("car","bicycle")]
-
+rooms <- c(2,1,NA,4)
+mean(rooms)
+max(rooms)
+mean(rooms, na.rm = TRUE)
+!is.na(rooms)   #! makes a opposite choice
+rooms[!is.na(rooms)]
