@@ -27,3 +27,61 @@ total_meals <- interviews %>%
   filter (total_meals>20) %>%
   select(village, total_meals)
            
+interviews
+interviews %>%
+  group_by(village) %>%
+  summarise(mean_no_membrs = mean(no_membrs))
+
+interviews %>%
+  filter(!is.na(memb_assoc))%>%
+  group_by(village, memb_assoc) %>%
+  summarise(mean_no_membrs = mean(no_membrs))
+
+interviews %>%
+  filter(!is.na(memb_assoc))%>%
+  group_by(village, memb_assoc) %>%
+  summarise(mean_no_membrs = mean(no_membrs), min_membrs =min(no_membrs))
+
+interviews %>%
+  filter(!is.na(memb_assoc))%>%
+  group_by(village, memb_assoc) %>%
+  summarise(mean_no_membrs = mean(no_membrs), min_membrs =min(no_membrs))%>%
+  arrange(min_membrs)
+
+interviews %>%
+  filter(!is.na(memb_assoc))%>%
+  group_by(village, memb_assoc) %>%
+  summarise(mean_no_membrs = mean(no_membrs), min_membrs =min(no_membrs))%>%
+  arrange(desc(min_membrs))
+
+interviews%>%
+  count(village)
+
+interviews%>%
+  count(village,sort=TRUE)
+
+interviews%>%
+  group_by(village)%>%
+  summarise(
+    mean_no_membrs=mean(no_membrs), 
+    min_membrs=min(no_membrs),
+    max_membrs=max(no_membrs), 
+    n=n()
+    )
+
+interviews_spread <- interviews%>%
+  mutate(wall_type_logical=TRUE) %>%
+  spread(key=respondent_wall_type, value = wall_type_logical, fill = FALSE)
+
+view(interviews_spread)
+
+interviews_gather <- interviews_spread%>%
+  gather(key="respondent_wall_type", value = "wall_type_logical",burntbricks:sunbricks)
+view(interviews_gather)
+
+interviews_gather <- interviews_spread%>%
+  gather(key="respondent_wall_type", value = "wall_type_logical",burntbricks:sunbricks)%>%
+  filter(wall_type_logical)%>%
+  
+view(interviews_gather)
+
