@@ -58,5 +58,10 @@ ggplot(Interviews_plotting,
   facet_grid(memb_assoc~village) +
   theme(axis.text = element_text(angle = 90))
 
-
+p<-ggplot(Interviews_plotting,
+          aes(x=respondent_wall_type))+
+  geom_bar(aes(fill=village), position = "dodge")+
+  labs(x="wall Type", y="count")+
+  facet_grid(memb_assoc~village) +
+  theme(axis.text = element_text(angle = 90))
 

@@ -64,3 +64,8 @@ max(rooms)
 mean(rooms, na.rm = TRUE)
 !is.na(rooms)   #! makes a opposite choice
 rooms[!is.na(rooms)]
+library(tidyverse)
+library(lubridate)
+
+interviews <- read_csv("data/SAFI_clean.csv", na = "NULL")
+

@@ -85,3 +85,8 @@ interviews_gather <- interviews_spread%>%
   
 view(interviews_gather)
 
+
+
+
+
+
